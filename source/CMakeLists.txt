@@ -21,6 +21,9 @@ set(IDE_FOLDER "Applications")
 add_subdirectory(broker)
 add_subdirectory(client)
 add_subdirectory(server)
+
+# Wrapper
+set(IDE_FOLDER "Wrappers")
 add_subdirectory(wrapper)
 
 # Tests

@@ -11,7 +11,7 @@
 # 
 
 # Target name
-set(target common)
+set(target CloudGLCommon)
 
 # Exit here if required dependencies are not met
 message(STATUS "Lib ${target}")
@@ -27,8 +27,8 @@ set(export_macro "${target_upper}_API")
 # Sources
 # 
 
-set(include_path "${CMAKE_CURRENT_SOURCE_DIR}/include/${target}")
-set(source_path  "${CMAKE_CURRENT_SOURCE_DIR}/source")
+set(include_path "${CMAKE_CURRENT_SOURCE_DIR}/")
+set(source_path  "${CMAKE_CURRENT_SOURCE_DIR}/")
 
 set(headers
     ${include_path}/common.h
@@ -52,7 +52,7 @@ source_group_by_path(${source_path}  "\\\\.cpp$|\\\\.c$|\\\\.h$|\\\\.hpp$"
 # 
 
 # Build library
-add_library(${target}
+add_library(${target} STATIC
     ${sources}
     ${headers}
 )

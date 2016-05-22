@@ -11,7 +11,7 @@
 # 
 
 # Target name
-set(target CloudGL-Broker)
+set(target CloudGLBroker)
 
 # Exit here if required dependencies are not met
 message(STATUS "Application ${target}")
@@ -69,7 +69,7 @@ target_include_directories(${target}
 target_link_libraries(${target}
     PRIVATE
     ${DEFAULT_LIBRARIES}
-    ${META_PROJECT_NAME}::common
+    ${META_PROJECT_NAME}::CloudGLCommon
 )
 
 
