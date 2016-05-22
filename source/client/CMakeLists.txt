@@ -23,8 +23,27 @@ message(STATUS "Application ${target}")
 
 set(sources
     main.cpp
+    CloudGLClient.cpp
+    CloudGLClient.h
+    CreateSessionDialog.cpp
+    CreateSessionDialog.h
 )
 
+
+#
+# Qt5 UI
+#
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+set(uis
+        CloudGLClient.ui
+        CreateSessionDialog.ui
+        )
+
+QT5_WRAP_UI(ui_headers ${uis})
+
+message("UI Headerss: ${ui_headers}")
 
 # 
 # Create executable
@@ -34,6 +53,7 @@ set(sources
 add_executable(${target}
     MACOSX_BUNDLE
     ${sources}
+    ${ui_headers}
 )
 
 # Create namespaced alias
@@ -70,6 +90,9 @@ target_link_libraries(${target}
     PRIVATE
     ${DEFAULT_LIBRARIES}
     ${META_PROJECT_NAME}::CloudGLCommon
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
 )
 
 
