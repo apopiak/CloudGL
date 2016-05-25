@@ -14,7 +14,11 @@ class CloudGLClient final:
 public:
     CloudGLClient();
 
+public slots:
+    void createSession();
+
+
 private:
     std::unique_ptr<Ui::CloudGLClient> m_ui;
-
 };
+
