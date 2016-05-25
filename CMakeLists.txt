@@ -146,6 +146,21 @@ if(NOT SYSTEM_DIR_INSTALL)
     endif()
 endif()
 
+#
+# Qt5 Project options
+#
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOMOC_MOC_OPTIONS "-nn")
+
+#
+# Project dependencies
+#
+
+find_package(Qt5Core    REQUIRED)
+find_package(Qt5Gui     REQUIRED)
+find_package(Qt5Widgets REQUIRED)
+
 
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Gui REQUIRED)

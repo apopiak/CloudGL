@@ -3,9 +3,12 @@
 #include <string>
 #include <vector>
 
+#include <QApplication>
+#include <QMainWindow>
 #include <QSharedMemory>
 
-int main(int /*argc*/, char* /*argv*/[]) {
+int main(int argc, char* argv[])
+{
     std::cout << "Client here, wishing you a bright day" << std::endl;
 
     auto mem = new QSharedMemory("sharedmemory");
@@ -18,6 +21,10 @@ int main(int /*argc*/, char* /*argv*/[]) {
 
     std::cout << "Client says: " << std::string(readstring.data(), readstring.size()) << std::endl;
 
-    return 0;
+    QApplication app(argc, argv);
+    QMainWindow window;
+    window.show();
+
+    return app.exec();
 }
 
