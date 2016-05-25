@@ -7,6 +7,8 @@
 #include <QMainWindow>
 #include <QSharedMemory>
 
+#include <CloudGLClient.h>
+
 int main(int argc, char* argv[])
 {
     std::cout << "Client here, wishing you a bright day" << std::endl;
@@ -22,8 +24,9 @@ int main(int argc, char* argv[])
     std::cout << "Client says: " << std::string(readstring.data(), readstring.size()) << std::endl;
 
     QApplication app(argc, argv);
-    QMainWindow window;
-    window.show();
+
+    CloudGLClient cloudGLClient;
+    cloudGLClient.show();
 
     return app.exec();
 }
