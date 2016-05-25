@@ -32,10 +32,12 @@ set(source_path  "${CMAKE_CURRENT_SOURCE_DIR}/source")
 
 set(headers
     ${include_path}/common.h
+    ${include_path}/SharedMemoryDevice.h
 )
 
 set(sources
     ${source_path}/common.cpp
+    ${source_path}/SharedMemoryDevice.cpp
 )
 
 # Group source files
@@ -131,8 +133,10 @@ target_link_libraries(${target}
 
     PUBLIC
     ${DEFAULT_LIBRARIES}
+    Qt5::Core
 
     INTERFACE
+
 )
 
 
